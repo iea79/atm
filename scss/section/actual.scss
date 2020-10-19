@@ -1,0 +1,50 @@
+.actual {
+    text-align: center;
+    padding: 0 0 3.3em;
+
+    @media (min-width: 768px) {
+        padding: 3.8em 0 3.3em;
+    }
+
+    .section {
+        &__title {
+            color: $color_withe;
+            font-weight: 700;
+            margin-bottom: 1.3em;
+
+            @media (min-width: 768px) {
+                margin-bottom: 0.8em;
+            }
+        }
+
+    }
+
+    &__content {
+        padding: 3.7em 2.6em 18.5em;
+        background: url("../img/actual-bg-mob.jpg") center bottom no-repeat;
+        background-size: cover;
+        margin: 0 -1em;
+
+        @media (min-width: 768px) {
+            border-radius: 3.125em;
+            padding: 4.4em 12em 11em;
+            margin: 0;
+            background: url("../img/actual-bg.jpg") 0 0 no-repeat;
+            background-size: contain;
+        }
+    }
+
+    &__action {
+        // width: 30.5em;
+
+        @media (min-width: 768px) {
+            margin: auto;
+            width: 30.5em;
+        }
+
+        .btn {
+            width: 100%;
+        }
+    }
+
+}

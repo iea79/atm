@@ -1,6 +1,6 @@
 .form {
 	&__row {
-		margin-bottom: 15px;
+		margin-bottom: 1em;
 
 		.btn,
 		input:not([type]),
@@ -19,7 +19,7 @@
 		textarea {
 			max-width: 100%;
 			max-width: 100%;
-			min-height: 15px;
+			min-height: 5em;
 		}
 	}
 
@@ -37,32 +37,41 @@ input[type=text],
 input[type=url],
 textarea {
 	background-color: $input_bg_color;
-	border: 1px solid $input_border_color;
-	padding: 6px 15px;
+	border: none;
+	border-bottom: 0.063em solid #d5d8d5;
+	color: $main_color;
+	padding: 1em 0;
 	outline: none;
-	font-size: 16px;
-	font-weight: 300;
+	font-size: 1.063em;
+	font-weight: 400;
 	font-family: $main_font_family;
-	border-radius: 5px;
-	transition: all 0.3s;
+	border-radius: 0;
+	transition: 0.3s;
+	transition-property: color background border-color;
 
 	&:hover {
-		border: 1px solid $input_hover_border_color;
+		border-bottom: 0.063em solid $input_hover_border_color;
 		background-color: $input_hover_bg_color;
 	}
 
 	&:focus {
-		border: 1px solid $input_focus_border_color;
+		border-bottom: 0.063em solid $input_focus_border_color;
 		background-color: $input_focus_bg_color;
+
+		@include placeholder {
+			text-indent: -10em;
+		}
 	}
 
 	&.invalid {
 		background-color: #fff0f0;
-		border: 1px solid red;
+		border-bottom: 0.063em solid red;
 	}
 	// Placeholder for input +++++++++++++++
 	@include placeholder {
-		color: #ddd;
+		color: $main_color;
+		text-indent: 0;
+		transition: 0.3s;
 	}
 }
 
@@ -151,4 +160,69 @@ input[type=checkbox] {
 	&:disabled:indeterminate:before {
 		color: #aaa;
 	}
+}
+
+.form {
+	box-shadow: 0 3.063em 8.75em rgba(20, 21, 20, 0.07), 0 0 3.125em rgba(20, 21, 20, 0.05);
+	border-radius: 2.4em;
+	background-color: $color_withe;
+	padding: 2.8em 2em 3.9em;
+
+	@media (min-width: 768px) {
+		border-radius: 3.125em;
+		padding: 4.3em 5.5em 3.9em 5.8em;
+	}
+
+	&__title {
+		color: $main_color;
+		font-family: $seccond_font_family;
+		font-size: 1.33em;
+		font-weight: 700;
+		margin-bottom: 0.5em;
+
+		@media (min-width: 768px) {
+			margin-bottom: 1em;
+			font-size: 1.625em;
+		}
+	}
+
+	&__sub {
+		font-size: 0.97em;
+		margin-bottom: 1.35em;
+
+		@media (min-width: 768px) {
+			font-size: 1.063em;
+			margin-bottom: 1.2em;
+		}
+	}
+
+	&__row {
+		margin-bottom: 2em;
+	}
+
+	&__action {
+		.btn {
+			width: 100%;
+		}
+	}
+
+	&__term {
+		font-size: 0.9em;
+		opacity: 0.5;
+		color: $main_color;
+		margin-top: 1.3em;
+		text-align: center;
+		padding: 0 2.4em;
+
+		@media (min-width: 768px) {
+			font-size: 0.625em;
+			margin-top: 1.7em;
+			padding: 0;
+		}
+
+		a {
+			color: $main_color;
+		}
+	}
+
 }

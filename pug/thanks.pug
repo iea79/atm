@@ -1,0 +1,22 @@
+extends layout/layout.pug
+block variables
+    - var thanks = true;
+
+block content
+    .thanks__content
+        .thanks__photo
+            img(src="img/thanks-photo.png", alt="")
+        .thanks__right
+            h1.thanks__title
+                span Форма отправлена
+                |, 
+                br
+                |спасибо за заявку!
+            .thanks__sub Наш менеджер свяжется <br>с вами в течении 10 минут
+            .thanks__foot
+                .thanks__avater
+                    img(src="img/thanks-mob.png", alt="")
+                .thanks__text
+                    .thanks__label С уважением,
+                    .thanks__name Ирина Нарчемашвили
+                    .thanks__bage автор курса

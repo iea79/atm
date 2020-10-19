@@ -1,0 +1,206 @@
+.author {
+    background: url("../img/author-bg.jpg") center top no-repeat;
+    background-size: auto 44.5%;
+    padding: 10.2em 0 0;
+    margin-top: -7.1em;
+    margin-bottom: 2em;
+
+    @media (min-width: 768px) {
+        padding: 10.2em 0 2.2em;
+        margin-bottom: 22em;
+        margin-top: -8em;
+        background: url("../img/author-bg.jpg") center bottom no-repeat;
+        background-size: cover;
+    }
+
+    .section {
+        &__title {
+            font-weight: 600;
+            font-size: 2.5em;
+            margin-bottom: 0.2em;
+
+            @media (min-width: 768px) {
+                font-size: 4.2em;
+                margin-bottom: 0.3em;
+            }
+        }
+
+    }
+
+    &__content {
+
+        @media (min-width: 768px) {
+            display: flex;
+        }
+    }
+
+    &__photo {
+        flex: none;
+        margin: 0 -1em 0 -3em;
+
+        @media (min-width: 768px) {
+            margin: 0 1.9em 0 -5.5em;
+            width: 41.2em;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__right {
+        position: relative;
+        padding: 2.6em 1.3em;
+
+        @media (min-width: 768px) {
+            padding: 6.8em 0 0;
+        }
+
+        @media (max-width: 767px) {
+            margin: -29.4em 0 0;
+            box-shadow: 0 3.063em 8.75em rgba(20, 21, 20, 0.07), 0 0 3.125em rgba(20, 21, 20, 0.05);
+            border-radius: 1.563em;
+            background-color: $color_withe;
+        }
+    }
+
+    &__label {
+        position: absolute;
+        color: #1ab05d;
+        font-family: $main_font_family;
+        font-size: 1.063em;
+        font-weight: 400;
+        line-height: 1.381em;
+        border-radius: 0.23em;
+        padding: 0.2em 0.4em;
+        border: 0.063em solid;
+
+        left: 11.6em;
+        top: 2.9em;
+
+        @media (min-width: 768px) {
+            border-radius: 0.625em;
+            // font-size: 1.063em;
+            left: -9.2em;
+            top: 7.5em;
+            padding: 0.5em 1em;
+        }
+    }
+
+    &__descr {
+        padding: 0 1.2em 0.4em;
+        font-size: 0.96em;
+
+        @media (min-width: 768px) {
+            font-size: 1.063em;
+            padding: 0 2.1em 0.7em;
+
+        }
+
+        p {
+            margin: 0.85em 0;
+
+            @media (min-width: 768px) {
+                margin: 1.32em 0;
+            }
+        }
+
+    }
+
+    &__tags {
+        padding: 0 0.9em;
+
+        @media (min-width: 768px) {
+            padding: 0 1.7em;
+        }
+
+        span {
+            display: inline-block;
+            color: #1ab05d;
+            font-size: 0.95em;
+            padding: 0.5em 0.8em;
+            margin: 0 0.5em 0.7em;
+            border-radius: 0.6em;
+            border: 0.063em solid;
+
+            @media (min-width: 768px) {
+                font-size: 0.813em;
+                padding: 0.3em 0.7em;
+                margin: 0 0.5em 0.8em;
+            }
+        }
+    }
+
+    &__bottom {
+        position: relative;
+        padding: 5.3em 1.8em 2.7em;
+
+        margin: 0 -1em;
+
+        @media (min-width: 768px) {
+            display: flex;
+            box-shadow: 0 3.063em 8.75em rgba(20, 21, 20, 0.07);
+            border-radius: 3.125em;
+            background-color: $color_withe;
+            margin: -22.7em -7.5em -17.3em -7.3em;
+            padding: 6.2em 7.4em;
+        }
+
+        @media (max-width: 767px) {
+            background: url("../img/technology-bg.jpg") right -32em bottom no-repeat;
+            background-size: 590% auto;
+        }
+    }
+
+    &__circs {
+        @media (min-width: 768px) {
+            flex: none;
+            width: 50%;
+        }
+
+        .circs {
+            margin-top: 1.7em;
+            margin-left: -1.7em;
+            margin-bottom: 2.2em;
+
+            @media (min-width: 768px) {
+                margin-top: 0;
+                margin-bottom: 0;
+                max-width: 31.1em;
+                margin-left: -2em;
+            }
+
+            &__item {
+                @media (min-width: 768px) {
+                    margin-bottom: 2.8em;
+                }
+            }
+        }
+    }
+
+    &__legend {
+        font-family: $seccond_font_family;
+        font-size: 1.8em;
+        font-weight: 700;
+        line-height: 1.35;
+        margin-bottom: 0;
+
+        @media (min-width: 768px) {
+            font-size: 2.125em;
+            line-height: 1.3;
+            margin-bottom: 0.9em;
+        }
+    }
+
+    &__form {
+
+        @media (min-width: 768px) {
+            margin-top: -12.1em;
+        }
+
+        @media (max-width: 767px) {
+            margin: 0 -0.8em;
+        }
+    }
+
+}

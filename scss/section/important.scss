@@ -1,0 +1,187 @@
+.important {
+    padding: 5.4em 0;
+
+    @media (min-width: 768px) {
+        padding: 7.2em 0;
+    }
+
+    &__top {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+    }
+
+    &__photo {
+        flex: none;
+        width: 4.51em;
+        margin-right: 1.2em;
+
+        @media (min-width: 768px) {
+            width: 3.813em;
+            margin-right: 1.5em;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            border-radius: 50%;
+        }
+    }
+
+    &__info {}
+
+    &__name {
+        font-size: 1.12em;
+        font-weight: 700;
+        margin-top: 0.3em;
+
+        @media (min-width: 768px) {
+            font-size: 1.063em;
+            margin-top: 0;
+        }
+    }
+
+    &__company {
+        font-size: 1em;
+        margin-top: 0.2em;
+
+        @media (min-width: 768px) {
+            font-size: 0.813em;
+            margin-top: 0;
+        }
+    }
+
+    &__quote {
+        position: relative;
+        z-index: 1;
+        padding: 1.2em 0.5em 0.4em 0.7em;
+        font-size: 1.15em;
+
+        @media (min-width: 768px) {
+            padding: 1em 0.1em 0 1em;
+            font-size: 1.063em;
+
+        }
+
+        &:before {
+            content: '';
+            display: block;
+            background: url("../img/quote.svg") 0 0 no-repeat;
+            background-size: contain;
+            width: 1.688em;
+            height: 1.25em;
+            position: absolute;
+            top: -0.5em;
+            left: 0.4em;
+
+            @media (min-width: 768px) {
+                top: -0.2em;
+                left: 0.1em;
+            }
+        }
+    }
+
+    .plates {
+        @media (max-width: 767px) {
+            padding-bottom: 0.6em;
+        }
+
+        &__item {
+            padding: 1.9em 1.7em 1.7em;
+
+            @media (min-width: 768px) {
+                padding: 2em 1.9em 2.1em;
+                width: 33.3%;
+
+                &:nth-child(3n+2) {
+                    border-radius: 0;
+                }
+
+                &:nth-child(3n) {
+                    border-radius: 0 1.875em 1.875em 0;
+                }
+
+                &:nth-child(1) {
+                    border-radius: 1.875em 1.875em 0 1.875em;
+                    z-index: 9;
+                }
+
+                &:nth-child(2) {
+                    border-radius: 1.875em 1.875em 0 0;
+                    z-index: 8;
+                }
+
+                &:nth-child(3) {
+                    border-radius: 1.875em 1.875em 1.875em 0;
+                    z-index: 7;
+                }
+
+                &:nth-child(4) {
+                    border-radius: 1.875em 0 0 1.875em;
+                    z-index: 6;
+                }
+
+                &:nth-child(5) {
+                    z-index: 5;
+                }
+
+                &:nth-child(6) {
+                    z-index: 4;
+                }
+
+                &:nth-child(7) {
+                    border-radius: 1.875em 0 1.875em 1.875em;
+                    z-index: 3;
+                }
+
+                &:nth-child(8) {
+                    border-radius: 0 0 1.875em 1.875em;
+                    z-index: 2;
+                }
+
+                &:nth-child(9) {
+                    border-radius: 0 1.875em 1.875em 1.875em;
+                    z-index: 1;
+                }
+            }
+
+            @media (max-width: 767px) {
+                width: 100%;
+                transition: margin 0.3s;
+
+                &:nth-child(4):not(.show) {
+                    margin-top: -10em;
+                }
+
+                &:nth-child(5):not(.show) {
+                    margin-top: -10.9em;
+                }
+
+                &:nth-child(6):not(.show) {
+                    margin-top: -11.4em;
+                }
+
+                &:nth-child(7):not(.show) {
+                    margin-top: -11.8em;
+                }
+
+                &:nth-child(n+4):not(.show) {
+                    .important__quote {
+                        opacity: 0;
+                    }
+                }
+
+                &:nth-child(n+8):not(.show) {
+                    display: none;
+                }
+
+                &.show {
+                    margin-top: 0;
+                }
+            }
+        }
+
+    }
+
+}

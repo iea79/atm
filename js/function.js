@@ -39,7 +39,20 @@ $(document).ready(function() {
     // $('[name=tel]').inputmask("+9(999)999 99 99",{ showMaskOnHover: false });
     // formSubmit();
 
-    // checkOnResize();
+    checkOnResize();
+    uploadYoutubeVideo();
+
+    $('.js_moreImportant').on('click', function() {
+        $('.important .plates__item').addClass('show');
+        $(this).hide();
+    });
+
+    $('.js_moreVideo').on('click', function() {
+        $('.problemVideo__row').show();
+        $(this).hide();
+    });
+
+    $('.thanks__title span').text(getParameterByName('name'));
 
 });
 
@@ -49,57 +62,73 @@ $(window).resize(function(event) {
     if (app.resized == windowWidth) { return; }
     app.resized = windowWidth;
 
-	// checkOnResize();
+	checkOnResize();
 });
 
 function checkOnResize() {
     // fontResize();
+    initProblemSlider();
 }
 
-// Stiky menu // Липкое меню. При прокрутке к элементу #header добавляется класс .stiky который и стилизуем
-function stikyMenu() {
-    let HeaderTop = $('header').offset().top + $('.home').innerHeight();
-    let currentTop = $(window).scrollTop();
-
-    setNavbarPosition();
-
-    $(window).scroll(function(){
-        setNavbarPosition();
-    });
-
-    function setNavbarPosition() {
-        currentTop = $(window).scrollTop();
-
-        if( currentTop > HeaderTop ) {
-            $('header').addClass('stiky');
-        } else {
-            $('header').removeClass('stiky');
-        }
-
-        $('.navbar__link').each(function(index, el) {
-            let section = $(this).attr('href');
-
-            if ($('section').is(section)) {
-                let offset = $(section).offset().top;
-
-                if (offset <= currentTop && offset + $(section).innerHeight() > currentTop) {
-                    $(this).addClass('active');
-                } else {
-                    $(this).removeClass('active');
-                }
-            }
+function initProblemSlider() {
+    if (isXsWidth()) {
+        $('.problem__list:not(.slick-initialized)').slick({
+            dots: false,
+            arrows: false,
+            infinite: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            adaptiveHeight: true
         });
+    } else {
+        $('.problem__list.slick-initialized').slick('destroy');
     }
-};
+}
 
-function openMobileNav() {
-    $('.navbar__toggle').on('click', function() {
-        var wrapp = $('.nav');
-
-        wrapp.toggleClass('open');
-    });
-};
-openMobileNav();
+// // Stiky menu // Липкое меню. При прокрутке к элементу #header добавляется класс .stiky который и стилизуем
+// function stikyMenu() {
+//     let HeaderTop = $('header').offset().top + $('.home').innerHeight();
+//     let currentTop = $(window).scrollTop();
+//
+//     setNavbarPosition();
+//
+//     $(window).scroll(function(){
+//         setNavbarPosition();
+//     });
+//
+//     function setNavbarPosition() {
+//         currentTop = $(window).scrollTop();
+//
+//         if( currentTop > HeaderTop ) {
+//             $('header').addClass('stiky');
+//         } else {
+//             $('header').removeClass('stiky');
+//         }
+//
+//         $('.navbar__link').each(function(index, el) {
+//             let section = $(this).attr('href');
+//
+//             if ($('section').is(section)) {
+//                 let offset = $(section).offset().top;
+//
+//                 if (offset <= currentTop && offset + $(section).innerHeight() > currentTop) {
+//                     $(this).addClass('active');
+//                 } else {
+//                     $(this).removeClass('active');
+//                 }
+//             }
+//         });
+//     }
+// };
+//
+// function openMobileNav() {
+//     $('.navbar__toggle').on('click', function() {
+//         var wrapp = $('.nav');
+//
+//         wrapp.toggleClass('open');
+//     });
+// };
+// openMobileNav();
 
 // Scroll to ID // Плавный скролл к элементу при нажатии на ссылку. В ссылке указываем ID элемента
 function srollToId() {
@@ -112,33 +141,33 @@ function srollToId() {
     });
 }
 
-function fontResize() {
-    var windowWidth = $(window).width();
-    if (windowWidth >= 1200) {
-    	var fontSize = windowWidth/19.05;
-    } else if (windowWidth < 1200) {
-    	var fontSize = 60;
-    }
-	$('body').css('fontSize', fontSize + '%');
-}
-
+// function fontResize() {
+//     var windowWidth = $(window).width();
+//     if (windowWidth >= 1200) {
+//     	var fontSize = windowWidth/19.05;
+//     } else if (windowWidth < 1200) {
+//     	var fontSize = 60;
+//     }
+// 	$('body').css('fontSize', fontSize + '%');
+// }
+//
 // Проверка направления прокрутки вверх/вниз
-function checkDirectionScroll() {
-    var tempScrollTop, currentScrollTop = 0;
-
-    $(window).scroll(function(){
-        currentScrollTop = $(window).scrollTop();
-
-        if (tempScrollTop < currentScrollTop ) {
-            app.pageScroll = "down";
-        } else if (tempScrollTop > currentScrollTop ) {
-            app.pageScroll = "up";
-        }
-        tempScrollTop = currentScrollTop;
-
-    });
-}
-checkDirectionScroll();
+// function checkDirectionScroll() {
+//     var tempScrollTop, currentScrollTop = 0;
+//
+//     $(window).scroll(function(){
+//         currentScrollTop = $(window).scrollTop();
+//
+//         if (tempScrollTop < currentScrollTop ) {
+//             app.pageScroll = "down";
+//         } else if (tempScrollTop > currentScrollTop ) {
+//             app.pageScroll = "up";
+//         }
+//         tempScrollTop = currentScrollTop;
+//
+//     });
+// }
+// checkDirectionScroll();
 
 // Видео youtube для страницы
 function uploadYoutubeVideo() {
@@ -149,7 +178,9 @@ function uploadYoutubeVideo() {
             $(this).css('background-image', 'url(http://i.ytimg.com/vi/' + this.id + '/sddefault.jpg)');
 
             // Добавляем иконку Play поверх миниатюры, чтобы было похоже на видеоплеер
-            $(this).append($('<img src="img/play.svg" alt="Play" class="video__play">'));
+            if (!$(this).hasClass('video__wrapper_nobtn')) {
+                $(this).append($('<img src="img/play.svg" alt="Play" class="video__play">'));
+            }
 
         });
 
@@ -165,6 +196,7 @@ function uploadYoutubeVideo() {
             let iframe = $('<iframe/>', {
                 'frameborder': '0',
                 'src': iframe_url,
+                'allow': "autoplay"
             })
 
             // Заменяем миниатюру HTML5 плеером с YouTube
@@ -215,72 +247,95 @@ function uploadYoutubeVideo() {
 // })
 
 // Простая проверка форм на заполненность и отправка аяксом
-// function formSubmit() {
-//     $("[type=submit]").on('click', function (e){
-//         e.preventDefault();
-//         var form = $(this).closest('.form');
-//         var url = form.attr('action');
-//         var form_data = form.serialize();
-//         var field = form.find('[required]');
-//         // console.log(form_data);
+function formSubmit() {
+    $("[type=submit]").on('click', function (e){
+        e.preventDefault();
+        var form = $(this).closest('.form');
+        var url = form.attr('action');
+        var form_data = form.serialize();
+        var form_arr = form.serializeArray();
+        var field = form.find('[required]');
+        // console.log(form_data);
 
-//         empty = 0;
+        empty = 0;
 
-//         field.each(function() {
-//             if ($(this).val() == "") {
-//                 $(this).addClass('invalid');
-//                 // return false;
-//                 empty++;
-//             } else {
-//                 $(this).removeClass('invalid');
-//                 $(this).addClass('valid');
-//             }
-//         });
+        field.each(function() {
+            if ($(this).val() == "") {
+                $(this).addClass('invalid');
+                // return false;
+                empty++;
+            } else {
+                $(this).removeClass('invalid');
+                $(this).addClass('valid');
+            }
+        });
 
-//         // console.log(empty);
+        // console.log(empty);
 
-//         if (empty > 0) {
-//             return false;
-//         } else {
-//             $.ajax({
-//                 url: url,
-//                 type: "POST",
-//                 dataType: "html",
-//                 data: form_data,
-//                 success: function (response) {
-//                     // $('#success').modal('show');
-//                     // console.log('success');
-//                     console.log(response);
-//                     // console.log(data);
-//                     // document.location.href = "success.html";
-//                 },
-//                 error: function (response) {
-//                     // $('#success').modal('show');
-//                     // console.log('error');
-//                     console.log(response);
-//                 }
-//             });
-//         }
+        if (empty > 0) {
+            return false;
+        } else {
+            $(this).attr('disabled', 'disabled');
+            // form.submit();
+            $.ajax({
+                url: url,
+                type: "POST",
+                dataType: "html",
+                data: form_data,
+                success: function (response) {
+                    let uname;
+                    // $('#success').modal('show');
+                    // console.log('success');
+                    // console.log(response);
+                    for (var i = 0; i < form_arr.length; i++) {
+                        if (form_arr[i].name === 'name') {
+                            uname = form_arr[i].value;
+                        }
+                    }
+                    console.log(form_data);
+                    console.log(form_arr);
+                    console.log(uname);
+                    document.location.href = "thanks.html?"+form_data;
+                },
+                error: function (response) {
+                    // $('#success').modal('show');
+                    // console.log('error');
+                    console.log(response);
+                }
+            });
+        }
 
-//     });
+    });
 
-//     $('[required]').on('blur', function() {
-//         if ($(this).val() != '') {
-//             $(this).removeClass('invalid');
-//         }
-//     });
+    $('[required]').on('blur', function() {
+        if ($(this).val() != '') {
+            $(this).removeClass('invalid');
+        }
+    });
 
-//     $('.form__privacy input').on('change', function(event) {
-//         event.preventDefault();
-//         var btn = $(this).closest('.form').find('.btn');
-//         if ($(this).prop('checked')) {
-//             btn.removeAttr('disabled');
-//             // console.log('checked');
-//         } else {
-//             btn.attr('disabled', true);
-//         }
-//     });
-// }
+    $('.form__privacy input').on('change', function(event) {
+        event.preventDefault();
+        var btn = $(this).closest('.form').find('.btn');
+        if ($(this).prop('checked')) {
+            btn.removeAttr('disabled');
+            // console.log('checked');
+        } else {
+            btn.attr('disabled', true);
+        }
+    });
+}
+formSubmit();
+
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+};
+
 
 
 // Проверка на возможность ввода только русских букв, цифр, тире и пробелов

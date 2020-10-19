@@ -1,6 +1,18 @@
 footer.footer
-    .container_center
-        p
-        | &copy; 2016 |
-        i.fa.fa-github(aria-hidden='true') &nbsp;
-        a(href='#') View Source
+    .footer__content
+        .footer__logo
+            a.logo(href="/")
+                img(src="img/logo.svg", alt="ATM logo")
+
+        .footer__inn
+            div ОГРН 1234567890 
+            div ИНН 1234567890
+
+        .footer__links
+            a(href="#") Политика конфиденциальности
+            a(href="#") Договор оферты
+
+        .footer__dev
+            .footer__label Разработка сайта
+            a(href="#")
+                img(src="img/ttf.svg", alt="Время первых")

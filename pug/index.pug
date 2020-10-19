@@ -1,9 +1,549 @@
 extends layout/layout.pug
 
 block content
-    .container_center
+    // begin home
+    section#home.home.section
+        .home__content
+            h1.home__title образовательная программа для владельцев бизнеса
+            h2.home__name «Финансовое планирование»
+            h3.home__subtitle Раз и навсегда наведите порядок в финансах компании, ﻿избавьтесь от лишних расходов и зарабатывайте больше денег на себя
+            .home__line
+                span 50 часов практики 
+                span онлайн и оффлайн формат
 
-        .grid
-            .grid__item Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, in.
-            .grid__item Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo numquam sequi officiis. Quia sed modi voluptatem, aut rem possimus at ipsa nobis iure non corporis nulla suscipit praesentium quos numquam quasi magni delectus eius illo, harum hic id! Laboriosam culpa recusandae nesciunt ab natus molestiae porro reiciendis, eveniet architecto temporibus!
-            .grid__item Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt fugiat, pariatur, explicabo ut quidem deleniti velit sed error dolor! Voluptates dignissimos consectetur repudiandae ipsam. Iusto, rerum, quam! Corporis, nisi, inventore?
+        .home__bottom
+            -var circs = ['Специальные условия ﻿по стоимости', 'Подробное описание программы', 'Первичная консультация <br>от <span class="desktop">нашего</span> специалиста', 'Закрытая база кейсов участников'];
+            .home__info
+                button.btn(data-toggle="modal" data-target="#getInfo") Узнать стоимость и подробности о курсе
+                .circs.desktop
+                    each item, i in circs
+                        .circs__item
+                            .circs__img
+                                img(src="img/circs-"+(i+1)+".svg", alt="")
+                            span !{item}
+
+    // end home
+
+    .container_center
+        .circs.mobile
+            each item, i in circs
+                .circs__item
+                    .circs__img
+                        img(src="img/circs-"+(i+1)+"-g.svg", alt="")
+                    span !{item}
+
+        .achievements
+            -var arr = [{num: '4 000+', text: 'участников прошло программу за 10 лет'}, {num: 'на 29%', text: 'в среднем снижаются расходы компании'}, {num: '91,5%', text: 'окупают программу уже на 26 час обучения'}]
+            each item in arr
+                .achievements__item
+                    .achievements__number= item.num
+                    .achievements__text= item.text
+
+        .achievements__info на основе внутренней аналитики результатов и отзывов участников программы 
+
+
+    // begin technology
+    section#technology.technology.section
+        .container_center
+            h2.section__title
+                b Курс построен по технологии управления финансов, 
+                |которую мы внедрили в 4 000+ компаний 
+            .technology__content
+                .technology__left
+                    .technology__label Три ключевых результата программы:
+                    ol.technology__list
+                        li 
+                            b Решите проблемы с деньгами 
+                            |(кассовые разрывы, долги, сезонность). Наведёте порядок в финансах и избавитесь от лишних расходов.
+                        li 
+                            b Увеличите чистую прибыль компании 
+                            |и свой личный заработок. Снизите загруженность, получите больше свободного времени.
+                        li 
+                            b Поднимите мотивацию за счёт «безокладной системы оплаты труда» ﻿
+                            |и производительность персонала.
+
+                .technology__right
+                    .plate
+                        .technology__label Из чего состоит обучение?
+
+                        .technology__plates.plates
+                            -var technology = ['43 теоретических видео-блока по построению системы финансов', '39 упражнений и заданий для выполнения в течение курса', 'Инструктор, который контролирует, проверяет и помогает', '21 шаблон документов, которые вы внедрите в свой бизнес']
+                            each item, i in technology
+                                .plates__item
+                                    .technology__img
+                                        img(src="img/tech-"+(i+1)+".png", alt="")
+                                    .technology__text= item
+
+            .technology__bottom
+                form.form(action="send.php")
+                    input(type="hidden", name="subject" value="Форма - получите актуальные условия участия в программе")
+                    .form__title Заполните форму и получите актуальные условия участия в программе
+                    .form__sub Мы вышлем всю информацию, ﻿ответим <br>на вопросы и озвучим стоимость обучения
+                    .form__row
+                        input(type="text", name="name" placeholder="Как вас зовут?" required)
+                    .form__row
+                        input(type="tel", name="tel" placeholder="+7" required)
+                    .form__action
+                        button.btn(type="submit") Получить условия участия
+                    .form__term Нажимая на кнопку, вы соглашаетесь на 
+                        a(href="#") условия обработки данных
+
+                .technology__circs
+                    .technology__circsTitle Узнайте актуальные условия участия в программе
+                        span 1 июля
+
+                    .circs
+                        each item, i in circs
+                            .circs__item
+                                .circs__img
+                                    img(src="img/circs-"+(i+1)+"-g.svg", alt="")
+                                span !{item}
+
+
+    // end technology
+
+    // begin important
+    section#important.important.section
+        .container_center
+            h2.section__title
+                b Ключевые действия, <br>﻿которые отмечают участники:
+
+            .plates
+                -var owners = [{name: 'Махач Хайбаев', company: '«Migliori»', quote: 'Внедрил финансовое планирование и увеличил прирост выручки на 200%.'}, {name: 'Максим Гральник', company: '«Гральник Лицензирование»', quote: 'Внедрил систему безокладной мотивации персонала и снизил расходы на 23%.'}, {name: 'Роман Мысютин', company: '«НИВЮС»', quote: 'Быстро достиг точки безубыточности и увеличил прирост выручки на 22%.'}, {name: 'Настинова Елена', company: '«ОЙРАТ»', quote: 'Высвободил 3-4 часа в день при увеличении выручки на 30%.'}, {name: 'Николай Моисеев', company: '«ГЕОКАД»', quote: 'Наняли 7 новых сотрудников <br>и увеличил доход на 55%.'}, {name: 'Ольга Маркина', company: '«КонСтил24»', quote: 'Увеличили штат сотрудников <br>и выросли в выручке на 90%.'}, {name: 'Молодцов Александр', company: '«Строительная база №1»', quote: 'Еженедельно стал получать <br>дивиденды,погасил долги на 70%.'}, {name: 'Фесюнов Павел', company: '«PRO-TUNING COMPANY»', quote: 'Внедрили фонд дивидендов, <br>﻿доход прирос на 11 млн рублей.'}, {name: 'Байбеков Евгений', company: '«Умняша»', quote: 'Оптимизировал расходы <br>и увеличил доход на 50%.'}]
+                each owner, i in owners
+                    .plates__item
+                        .important__top
+                            .important__photo
+                                img(src="img/owner-"+(i+1)+".png", alt=owner.name)
+                            .important__info
+                                .important__name= owner.name
+                                .important__company= owner.company
+                        .important__quote !{owner.quote}
+
+
+            .section__more
+                button.btn.btn_more.mobile.js_moreImportant Загрузить ещё
+                button.btn(data-toggle="modal" data-target="#getInfo") Узнать стоимость и подробности о курсе
+
+    // end important
+
+    // begin programm
+    section#programm.programm.section
+        .container_center
+            h2.section__title
+                b Программа обучения:
+            .programm__list
+                .programm__row
+                    .programm__toggle
+                        img(src="img/gear.svg", alt="")
+                    .programm__content
+                        .programm__top
+                            .programm__name Технология обучения
+                            .programm__duration 5 часов
+                            .programm__info
+                                span 13 видео-лекций 
+                                span 8 упражнений 
+                                span 3 статьи 
+
+                .programm__row
+                    .programm__toggle
+                        img(src="img/rub.svg", alt="")
+                    .programm__content
+                        .programm__top
+                            .programm__name Основы финансового планирования
+                            .programm__duration 15 часов
+                            .programm__info
+                                span 12 видео-лекций 
+                                span 8 упражнений 
+                                span 3 статьи 
+                        ol.programm__steps
+                            li Шаблоны заявок.
+                            li Таблицы для создания своей формы распределения средств и расчета ТБ.
+                            li Схема потока проведения процедуры финансового.
+                            li Схема системы расчётных счетов.
+
+                .programm__row
+                    .programm__toggle
+                        img(src="img/pie.svg", alt="")
+                    .programm__content
+                        .programm__top
+                            .programm__name Управление доходом
+                            .programm__duration 10 часов
+                            .programm__info
+                                span 5 видео-лекций 
+                                span 9 упражнений 
+                                span 6 статей 
+                        ol.programm__steps
+                            li Схема шагов по работе с дебиторской.
+                            li Список действий для проведения.
+                            li Список правил «секрет платёжеспособности».
+                            li План по доходу компании для достижения ТБ.
+                            li Шаблон пример организующей схемы компании.
+                            li Инструкция по работе с долгами.
+
+                .programm__row
+                    .programm__toggle
+                        img(src="img/list.svg", alt="")
+                    .programm__content
+                        .programm__top
+                            .programm__name Ценообразование и управление
+                            .programm__duration 5 часов
+                            .programm__info
+                                span 5 видео-лекций 
+                                span 4 упражнений 
+                                span 3 статьи 
+                        ol.programm__steps
+                            li Инструменты мерчандайзинга и ABC анализа.
+                            li Список шагов по увеличению маржинальности.
+                            li Список рекомендаций для работы с ассортиментом.
+                            li Чек-лист функций финансового директора.
+                            li Инструкция по скидкам.
+                            li Классификатор товаров.
+
+                .programm__row
+                    .programm__toggle
+                        img(src="img/man.svg", alt="")
+                    .programm__content
+                        .programm__top
+                            .programm__name Система заработной платы и мотивации персонала
+                            .programm__duration 10 часов
+                            .programm__info
+                                span 5 видео-лекций 
+                                span 4 упражнений 
+                                span 6 статей 
+                        ol.programm__steps
+                            li Инструкция по статистикам по каждому отделению (30 шт).
+                            li Таблица расчёта заработной платы по баллам.
+                            li 19 правил в отношении финансов в компании.
+                            li Инструкция по найму персонала.
+
+                .programm__row
+                    .programm__toggle
+                        img(src="img/flag.svg", alt="")
+                    .programm__content
+                        .programm__top
+                            .programm__name Тренировки и завершение
+                            .programm__duration 5 часов
+                            .programm__info
+                                span 1 видео-лекция 
+                                span 2 упражнения 
+                                span 1 статья 
+
+    // end programm
+
+    // begin actual
+    section#actual.actual.section
+        .container_center
+            .actual__content
+                h2.section__title Узнайте актуальные условия участия в программе
+                .actual__action
+                    button.btn(data-toggle="modal" data-target="#getInfo") Узнать условия участия в программе
+
+    // end actual
+
+    // begin reality
+    section#reality.reality.section
+        .reality__top
+            .reality__title
+                h2.section__title
+                    b Всё обучение — <br>на реальных цифрах вашего бизнеса
+                h3.section__sub Обязательное условие перед стартом — подготовить ряд отчетов и показателей, с которыми вы будете работать.
+
+            .reality__left
+                img(src="img/chart-1.png", alt="")
+            .reality__right
+                img(src="img/chart-2.png", alt="")
+
+        .container_center
+            .reality__bottom
+                .reality__descr За время курса вы создадите 4 таблицы 
+                    img.mobile(src="img/xls.svg", alt="") 
+                    |, 3 регламента, которые будут работать на вас всю жизнь
+                .reality__label вот лишь малая часть из них:
+
+                ul.reality__list
+                    -var reality = ['Таблица для создания формы распределения средств', 'План финансового <br>совета компании', 'Таблица по начислению <br>безокладной зарплаты', 'Таблица для создания <br>системы фондов', 'Таблица плана <br>по доходу', 'Регламент по статистикам <br>для компании', 'Схема системы <br>расчётных счетов', 'Работа с дебиторской <br>задолженностью', 'Регламент по скидкам', 'Система заявок <br>на расходы', 'Регламент по работе <br>с долгами', 'Описание вакансии']
+                    each item in reality
+                        li
+                            img(src="img/xls.svg", alt="")
+                            span !{item}
+
+
+    // end reality
+
+    // begin author
+    section#author.author.section
+        .container_center
+            .author__content
+                .author__photo
+                    img(src="img/Irina.png", alt="Ирина Нарчемашвили")
+                .author__right
+                    .author__label автор курса
+                    h2.section__title Ирина Нарчемашвили
+                    .author__descr
+                        p Один из лучших специалистов по финансам <br>в России, 17 лет своего бизнеса.
+                        p Действующий финансовый директор АТМ GROUP.
+                        p Тренер и консультант с 15 летним опытом.
+                        p Обучила 40 000 предпринимателей — рост <br>дохода от 40% до 300%.
+
+                    .author__tags
+                        span Автор программы — «ProfitJey» 
+                        span Соавтор ERP системы — «ManaJet» 
+                        span Диплом международного уровня 
+
+            .author__bottom
+                .author__circs
+                    .author__legend Готовы узнать стоимость <br>и специальные условия участия?
+                    .circs
+                        each item, i in circs
+                            .circs__item
+                                .circs__img
+                                    img(src="img/circs-"+(i+1)+"-g.svg", alt="")
+                                span !{item}
+
+                .author__form
+                    form.form(action="send.php")
+                        input(type="hidden", name="subject" value="Форма - получите актуальные условия участия в программе")
+                        .form__title Заполните форму и получите актуальные условия участия в программе
+                        .form__sub Мы вышлем всю информацию, ﻿ответим <br>на вопросы и озвучим стоимость обучения
+                        .form__row
+                            input(type="text", name="name" placeholder="Как вас зовут?" required)
+                        .form__row
+                            input(type="tel", name="tel" placeholder="+7" required)
+                        .form__action
+                            button.btn(type="submit") Получить условия участия
+                        .form__term Нажимая на кнопку, вы соглашаетесь на 
+                            a(href="#") условия обработки данных
+
+    // end author
+
+    // begin problem
+    section#problem.problem.section
+        .container_center
+            h2.section__title
+                b Проблемы в бизнесе, которые решают участники во время обучения
+            .problem__list
+                each item, i in [{name: 'Козлова Анна', company: '«ПЕЧЬ&ЛАНЧ»', from: 'Сотрудники не были заинтересованы в росте компании, большая конкуренция, долги перед банком и поставщиками.', to: 'Персонал предлагает идеи по увеличению дохода, прирост дохода на 30%, кредитная нагрузка упала на 30%.'}, {name: 'Лариса Дубровина', company: '«Golden Taurus»', from: 'Зарплата персонала окладная. <br>Нет финансового планирования компании. Лишние траты.', to: 'Полностью перешли на безокладную <br>оплату труда. Внедрили систему ФП. Оптимизировали расходы.'}, {name: 'Николай Титков', company: '«ГК ПРОФЭЛЕКТРО»', from: 'Делали много, а результата нет. <br>Большие расходы. Бизнес-процессы <br>без моего участия не решались.', to: 'Безокладная зарплата. Прирост маржи на 42%. Появился совет руководителей, который <br>снял с меня нагрузку.'}, {name: 'Михаил Гребенюк', company: '«Grebenyuk Resulting»', from: 'Выполнял функции сотрудников, а не учредителя. Решения от тратах принимались интуитивно. <br>У команды было слабое представление <br>о расходах компании.', to: 'Появился совет руководителей, освободил время. Прирост дохода составил 200%. Безокладная мотивация сотрудников. <br>Сократили долги на 33%.'}]
+                    .problem__row
+                        .problem__owner
+                            .problem__photo
+                                img(src="img/problem-"+(i+1)+".png", alt="")
+                            .problem__descr
+                                .problem__name= item.name + ','
+                                .problem__company= item.company
+                        .problem__content
+                            .problem__item
+                                .problem__label до
+                                .problem__text !{item.from}
+                            .problem__item
+                                .problem__label.problem__label_to после
+                                .problem__text !{item.to}
+
+            .problem__info
+                span Листай вправо, чтобы посмотреть проблемы участников программы 
+                img(src="img/slide.svg", alt="")
+
+
+            .problemVideo
+                .problemVideo__row
+                    .problemVideo__descr
+                        .problemVideo__name Максим Гральник
+                        .problemVideo__text
+                            p Настроил систему финансов. Научился <br>влиять на доход и мотивировать персонал.
+                            p Уверен, что курс окупится за неделю, <br>если применить хотя бы 10%.
+
+                        .problemVideo__photo
+                            img(src="img/pvideo-1.png", alt="Максим Гральник")
+                    .problemVideo__wrap
+                        .video__wrapper.js-youtube#spvVHqg_9kI
+
+                .problemVideo__row
+                    .problemVideo__descr
+                        .problemVideo__name Олег Торбосов
+                        .problemVideo__text
+                            p Настроил систему финансов. Научился <br>влиять на доход и мотивировать персонал.
+                            p Уверен, что курс окупится за неделю, <br>если применить хотя бы 10%.
+                        .problemVideo__photo
+                            img(src="img/pvideo-2.png", alt="Олег Торбосов")
+                    .problemVideo__wrap
+                        .video__wrapper.js-youtube#LMI0pkp35Bc
+
+                .problemVideo__row
+                    .problemVideo__descr
+                        .problemVideo__name Алексей Катков
+                        .problemVideo__text
+                            p Настроил систему финансов. Научился <br>влиять на доход и мотивировать персонал.
+                            p Уверен, что курс окупится за неделю, <br>если применить хотя бы 10%.
+                        .problemVideo__photo
+                            img(src="img/pvideo-3.png", alt="Алексей Катков")
+                    .problemVideo__wrap
+                        .video__wrapper.js-youtube#OuOXvavAy1c
+
+                .problemVideo__row
+                    .problemVideo__descr
+                        .problemVideo__name Дмитрий Портнягин
+                        .problemVideo__text
+                            p Настроил систему финансов. Научился <br>влиять на доход и мотивировать персонал.
+                            p Уверен, что курс окупится за неделю, <br>если применить хотя бы 10%.
+                        .problemVideo__photo
+                            img(src="img/pvideo-4.png", alt="Дмитрий Портнягин")
+                    .problemVideo__wrap
+                        .video__wrapper.js-youtube#d2NyWVenQ24
+
+            .section__more
+                a.btn.btn_more.mobile.js_moreVideo(href="#") Загрузить ещё
+                button.btn(data-toggle="modal" data-target="#getInfo") Узнать стоимость и подробности о курсе
+
+    // end problem
+
+    // begin unick
+    section#unick.unick.section
+        .container_center
+            h2.section__title
+                b Вы проходите обучение в режиме онлайн <br>на нашей уникальной IT-платформе
+
+            .unick__sub Посмотрите видео как проходит обучение
+            .unick__video
+                .video__wrapper.video__wrapper_nobtn.js-youtube#Y4oKQ4haM3M
+                    .video__play
+                        img(src="img/play.svg", alt="") 
+                        span Посмотрите видео как проходит обучение
+
+            .unick__info
+                .unick__infoText Всё время обучения вы находитесь на связи с инструктором: он вам помогает с практическими заданиями и отвечает <br>на любые вопросы.
+                .unick__infoTeachs
+                    img(src="img/unick-1.png", alt="")
+                    img(src="img/unick-2.png", alt="")
+                    img(src="img/unick-3.png", alt="")
+
+            .unick__list.plates
+                .plates__item
+                    .unick__title Расписание
+                    |У вас будет индивидуальный <br>график обучения. Кто-то готов <br>пройти  программу за 5 дней, <br>а кто-то вдумчиво изучает <br>в течение 4-х недель.
+                .plates__item
+                    .unick__title Личная работа
+                    |Инструктор будет подсказывать <br>вам на каждом шаге, чтобы вы прошли курс на 100%, сделали все задания <br>и применили знания.
+                .plates__item
+                    .unick__title Точно получится
+                    |Доходимость на курсе —  
+                    span 97% 
+                    br 
+                    |Каждый из участников успешно разрабатывает грамотную систему финансов под свой бизнес и уходит <br>с четким планом по внедрению.
+
+    // end unick
+
+    // begin networking
+    section#networking.networking.section
+        .container_center
+            .networking__content
+                .networking__left
+                    h2.section__title
+                        b Качественный нетворкинг среди выпускников программы 
+                            span.desktop и участие <br>в закрытых мероприятиях
+                    .networking__sub и участие в закрытых мероприятиях
+                    .networking__list
+                        .networking__listItem
+                            .networking__listImg
+                                img(src="img/networking-1.png", alt="")
+                            .networking__listText Общий чат выпускников в Telegram
+                        .networking__listItem
+                            .networking__listImg
+                                img(src="img/networking-2.png", alt="")
+                            .networking__listText Закрытые вебинары для выпускников
+                        .networking__listItem
+                            .networking__listImg
+                                img(src="img/networking-3.png", alt="")
+                            .networking__listText Живые встречи клуба выпускников каждые 2 месяца
+
+                .networking__right
+                    img(src="img/networking-phone.png", alt="")
+
+            .networking__plates.plates
+                .plates__item
+                    .networking__name Узнайте актуальную <br>стоимость участия в программе
+                    .networking__text Мы вышлем презентацию о программе, <br>проконсультируем и расскажем об актуальной цене.
+                    .networking__action
+                        button.btn.btn_seccondary(data-toggle="modal" data-target="#getInfo") Узнать стоимость участия
+                .plates__item
+                    .networking__name Приходите на наши <br>бесплатные вебинары
+                    .networking__text Каждую неделю мы проводим бесплатные <br>вебинары на тему финансов в бизнесе.
+                    .networking__action
+                        button.btn.btn_primary(data-toggle="modal" data-target="#getClosed") Подписаться на увомления о вебинарах
+
+    // end networking
+
+    //- // Button trigger modal call
+    //- button(class="btn btn-primary btn-lg" data-toggle="modal" data-target="#call") Click to open modal
+    // Begin Modal call
+    .modal.fade.call#call
+        .modal-dialog
+            a(href="#" class="modal-close" data-dismiss="modal")
+            form.form(action="send.php")
+                input(type="hidden", name="subject" value="Форма - Обратный звонок")
+                .form__title Закажите звонок
+                .form__sub И наш менеджер свяжется с вами через 10 минут
+
+                .form__row
+                    input(type="text", name="name" placeholder="Как вас зовут?" required)
+                .form__row
+                    input(type="tel", name="tel" placeholder="+7" required)
+                .form__action
+                    button.btn(type="submit") Заказать звонок
+                .form__term Нажимая на кнопку, вы соглашаетесь на 
+                    a(href="#") условия обработки данных
+
+    // End modal call
+
+    //- // Button trigger modal getInfo
+    //- button(class="btn btn-primary btn-lg" data-toggle="modal" data-target="#getInfo") Click to open modal
+    // Begin Modal getInfo
+    .modal.fade.getInfo#getInfo
+        .modal-dialog
+            a(href="#" class="modal-close" data-dismiss="modal")
+            .author__bottom
+                .author__circs
+                    .author__legend Узнайте актуальные условия участия в программе 
+                        span 1 июля
+                    .circs
+                        each item, i in circs
+                            .circs__item
+                                .circs__img
+                                    img(src="img/circs-"+(i+1)+"-g.svg", alt="")
+                                span !{item}
+
+                .author__form
+                    form.form(action="send.php")
+                        input(type="hidden", name="subject" value="Форма - Получите актуальные условия")
+                        .form__title Заполните форму и получите актуальные условия участия в программе
+                        .form__sub Мы вышлем всю информацию, ﻿ответим <br>на вопросы и озвучим стоимость обучения
+                        .form__row
+                            input(type="text", name="name" placeholder="Как вас зовут?" required)
+                        .form__row
+                            input(type="tel", name="tel" placeholder="+7" required)
+                        .form__action
+                            button.btn(type="submit") Получить условия участия
+                        .form__term Нажимая на кнопку, вы соглашаетесь на 
+                            a(href="#") условия обработки данных
+    // End modal getInfo
+
+    //- // Button trigger modal call
+    //- button(class="btn btn-primary btn-lg" data-toggle="modal" data-target="#getClosed") Click to open modal
+    // Begin Modal getClosed
+    .modal.fade.getClosed#getClosed
+        .modal-dialog
+            a(href="#" class="modal-close" data-dismiss="modal")
+            form.form(action="send.php")
+                input(type="hidden", name="subject" value="Форма - Доступ к закрытым вебинарам")
+                .form__title Получите доступ к закрытым вебинарам по финансам
+                .form__sub Каждую неделю мы проводим бесплатные вебинары на тему финансов в бизнесе.
+
+                .form__row
+                    input(type="text", name="name" placeholder="Как вас зовут?" required)
+                .form__row
+                    input(type="email", name="email" placeholder="Введите ваш e-mail" required)
+                .form__action
+                    button.btn.btn_primary(type="submit") Подписаться на уведомления <br>о вебинарах
+                .form__term Нажимая на кнопку, вы соглашаетесь на 
+                    a(href="#") условия обработки данных
+
+    // End modal getClosed

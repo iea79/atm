@@ -6,7 +6,7 @@
 	&__wrapper {
 		position: relative;
 		overflow: hidden;
-		padding-bottom: 56.4%;
+		padding-bottom: 58.1%;
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: cover;
@@ -34,12 +34,19 @@
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		width: 7.2em;
-		height: 7.2em;
-		margin-top: -3.6em;
-		margin-left: -3.6em;
-		border-radius: 50%;
+		width: 5.188em;
+		height: 8.125em;
+		transition: transform 0.3s;
+		transform: translate(-50%, -50%) scale(1);
+		// height: 7.2em;
+		// margin-top: -3.6em;
+		// margin-left: -3.6em;
+		// border-radius: 50%;
 		cursor: pointer;
 		// background-color: #f00;
+
+		&:hover {
+			transform: translate(-50%, -50%) scale(1.1);
+		}
 	}
 }

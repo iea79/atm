@@ -1,43 +1,106 @@
 // Style for button and pseudo button for input and link
+
 .btn {
 	color: $btn_default_text_color;
-	font-family: $main_font_family;
-	font-size: 16px;
-	font-weight: 300;
-	padding: 5px 15px 7px;
+	font-family: $seccond_font_family;
+	font-size: 1.1em;
+	text-transform: uppercase;
+	font-weight: 700;
+	padding: 1.45em 2em;
+	line-height: 1.5;
+	min-height: 5.4em;
 	border: none;
 	outline: none;
 	text-decoration: none;
-	display: inline-block;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 	background-color: $btn_default_bg_color;
 	text-align: center;
 	max-width: 100%;
 	cursor: pointer;
-	border-radius: 5px;
-	transition: all 0.3s;
-	text-decoration: none;
+	border-radius: 0.313em;
+	transition: background 0.3s;
+	box-shadow: inset 0 0.313em 3.125em rgba(255, 255, 255, 0.25);
+
+	&[disabled] {
+		cursor: default;
+		opacity: 0.5;
+	}
+
+	@media (min-width: 768px) {
+		font-size: 0.938em;
+		padding: 2.1em 2.8em;
+		line-height: 1.2;
+	}
+
 	&:hover {
-		background-color: #fff;
-		color: #000;
+		background-color: $btn_default_bg_color_hover;
+		color: $color_withe;
 		text-decoration: none;
 	}
-	&:focus,&:active {
-		background-color: transparentize(#fff, .2);
-		color: #000;
+
+	&:active,
+	&:focus {
+		background-color: $btn_default_bg_color_active;
+		color: $color_withe;
 	}
 	@each $status_el, $color_bg in $el_colors {
 		&_#{$status_el} {
 			background-color: $color_bg;
 			border-color: $color_bg;
 			color: $btn_contrast_text_color;
+
 			&:hover {
 				background-color: darken($color_bg, 7%);
 				color: $btn_contrast_text_color;
 			}
-			&:focus,&:active {
+
+			&:active,
+			&:focus {
 				background-color: darken($color_bg, 10%);
 				color: $btn_contrast_text_color;
 			}
 		}
-	}	
+	}
+
+	&_more {
+		background-color: transparent;
+		border: 0.063em solid $btn_default_bg_color;
+		color: $btn_default_bg_color;
+
+		position: relative;
+
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			width: 1.63em;
+			height: 1.71em;
+			// opacity: 0.7;
+			background: url("../img/refresh.svg") 0 0 no-repeat;
+			background-size: contain;
+			left: 1.1em;
+			top: 1.7em;
+			transform: rotate(0);
+			transition: transform 0.3s;
+		}
+
+		&:hover {
+			background-color: transparent;
+			border: 0.063em solid $btn_default_bg_color_hover;
+			color: $btn_default_bg_color_hover;
+
+			&:before {
+				transform: rotate(90deg);
+			}
+		}
+
+		&:active,
+		&:focus {
+			background-color: transparent;
+			border: 0.063em solid $btn_default_bg_color_active;
+			color: $btn_default_bg_color_active;
+		}
+	}
 }

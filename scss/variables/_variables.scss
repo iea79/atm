@@ -1,16 +1,18 @@
 /* Global variables */
 /* ======================================================================== */
-$main_font_family: "Open Sans";
-$main_color: #000;
+$main_font_family: Inter;
+$seccond_font_family: Montserrat;
+$main_color: #141514;
 $main_line_height: 1.2;
 $main_font_size: 16px;
 
-$container_width: 80em;
+$container_width: 77em;
 
 $footer_height: auto;
 
 // Color collection for elements
-$color_primary: #7b8287;
+$color_primary: #b6945e;
+$color_seccondary: #1AB05D;
 $color_success: #36a566;
 $color_info: #03a9f4;
 $color_warning: #fca33e;
@@ -19,10 +21,11 @@ $color_withe: #ffffff;
 
 $el-colors: (
 	primary: $color_primary, // color for .element__primary
-	success: $color_success, // color for .element__success
-	info: $color_info, // color for .element__info
-	warning: $color_warning, // color for .element__warning
-	danger: $color_danger, // color for .element__danger
+	seccondary: $color_seccondary, // color for .element__primary
+	// success: $color_success, // color for .element__success
+	// info: $color_info, // color for .element__info
+	// warning: $color_warning, // color for .element__warning
+	// danger: $color_danger, // color for .element__danger
 );
 
 /* Grid */
@@ -64,10 +67,11 @@ $input_error_border_color: red;
 $input_error_placeholder_color: red;
 
 // Button variables
-$btn_default_bg_color: #ddd;
-$btn_default_text_color: $main_color;
+$btn_default_bg_color: #1ab05d;
+$btn_default_text_color: $color_withe;
+$btn_default_bg_color_hover: lighten($btn_default_bg_color, 5%);
+$btn_default_bg_color_active: darken($btn_default_bg_color, 5%);
 $btn_contrast_text_color: $color_withe;
-$btn_default_bg_color_hover: #ccc;
 
 /* Breakpoints */
 $breakpoint-small: 480px !default;

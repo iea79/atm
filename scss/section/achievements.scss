@@ -1,0 +1,64 @@
+.achievements {
+    $apd: 2.1em;
+    margin: 4.3em 0 1.1em;
+
+    @media (min-width: 768px) {
+        display: flex;
+        justify-content: space-between;
+        margin: 2.4em #{-$apd} 1.1em;
+    }
+
+    &__item {
+        margin: 1em;
+        border-radius: 2.12em;
+        border: 0.063em solid #e5e5e5;
+        background-color: $color_withe;
+        padding: 4.7em 6.2em 4.2em 4em;
+        flex-grow: 0.33;
+
+        @media (min-width: 768px) {
+            margin: $apd;
+            padding: 5.3em 4.3em 5.2em 4.4em;
+            border-radius: 3.125em;
+
+        }
+    }
+
+    &__number {
+        font-family: $seccond_font_family;
+        font-size: 3.1em;
+        font-weight: 700;
+        margin-bottom: 0.12em;
+
+        @media (min-width: 768px) {
+            margin-bottom: 0.5em;
+            font-size: 2.5em;
+        }
+    }
+
+    &__text {
+        font-size: 1.15em;
+
+        @media (min-width: 768px) {
+            font-size: 1.063em;
+        }
+    }
+
+    &__info {
+        text-align: left;
+        font-size: 1em;
+        opacity: 0.5;
+        margin-top: 2em;
+        margin-bottom: 2.7em;
+        padding-left: 5.1em;
+
+        @media (min-width: 768px) {
+            text-align: center;
+            padding-left: 0;
+            font-size: 0.813em;
+            margin-top: 0;
+            margin-bottom: 6em;
+        }
+    }
+
+}

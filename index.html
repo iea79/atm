@@ -4,38 +4,773 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css?0.1"/>
+    <title>Document</title><link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png">
+<link rel="manifest" href="img/fav/site.webmanifest">
+<link rel="mask-icon" href="img/fav/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" type="text/css" href="css/style.css?0.7"/>
   </head>
   <body>
     <header class="header">
       <div class="header__content">
-        <div class="header__left"><a class="logo" href="/"><img src="img/logo.png" alt="alt"/></a></div>
-        <nav class="header__right">
-          <ul class="navbar">
-            <li class="navbar__item"><a class="navbar__link" href="">Page1</a></li>
-            <li class="navbar__item"><a class="navbar__link" href="">Page2</a></li>
-            <li class="navbar__item"><a class="navbar__link" href="">Page3</a></li>
-            <li class="navbar__item"><a class="navbar__link" href="">Page4</a></li>
-          </ul>
-        </nav>
+        <div class="header__left"><a class="logo" href="/"><img src="img/logo.svg" alt="ATM logo"/></a></div>
+        <div class="header__right"><a class="header__phone" href="tel: +7 916 111 11 11">+7 916 111 11 11</a><a class="header__call" href="#" data-toggle="modal" data-target="#call"><i class="icon_phone mobile"> </i><span class="desktop">Перезвонить вам?</span></a>
+        </div>
       </div>
     </header>
     <main class="main_content">
+      <!-- begin home-->
+      <section class="home section" id="home">
+        <div class="home__content">
+          <h1 class="home__title">образовательная программа для владельцев бизнеса</h1>
+          <h2 class="home__name">«Финансовое планирование»</h2>
+          <h3 class="home__subtitle">Раз и навсегда наведите порядок в финансах компании, ﻿избавьтесь от лишних расходов и зарабатывайте больше денег на себя</h3>
+          <div class="home__line"><span>50 часов практики </span><span>онлайн и оффлайн формат</span></div>
+        </div>
+        <div class="home__bottom">
+          <div class="home__info">
+            <button class="btn" data-toggle="modal" data-target="#getInfo">Узнать стоимость и подробности о курсе</button>
+            <div class="circs desktop">
+              <div class="circs__item">
+                <div class="circs__img"><img src="img/circs-1.svg" alt=""/></div><span>Специальные условия ﻿по стоимости</span>
+              </div>
+              <div class="circs__item">
+                <div class="circs__img"><img src="img/circs-2.svg" alt=""/></div><span>Подробное описание программы</span>
+              </div>
+              <div class="circs__item">
+                <div class="circs__img"><img src="img/circs-3.svg" alt=""/></div><span>Первичная консультация <br>от <span class="desktop">нашего</span> специалиста</span>
+              </div>
+              <div class="circs__item">
+                <div class="circs__img"><img src="img/circs-4.svg" alt=""/></div><span>Закрытая база кейсов участников</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end home-->
       <div class="container_center">
-        <div class="grid">
-          <div class="grid__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, in.</div>
-          <div class="grid__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo numquam sequi officiis. Quia sed modi voluptatem, aut rem possimus at ipsa nobis iure non corporis nulla suscipit praesentium quos numquam quasi magni delectus eius illo, harum hic id! Laboriosam culpa recusandae nesciunt ab natus molestiae porro reiciendis, eveniet architecto temporibus!</div>
-          <div class="grid__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt fugiat, pariatur, explicabo ut quidem deleniti velit sed error dolor! Voluptates dignissimos consectetur repudiandae ipsam. Iusto, rerum, quam! Corporis, nisi, inventore?</div>
+        <div class="circs mobile">
+          <div class="circs__item">
+            <div class="circs__img"><img src="img/circs-1-g.svg" alt=""/></div><span>Специальные условия ﻿по стоимости</span>
+          </div>
+          <div class="circs__item">
+            <div class="circs__img"><img src="img/circs-2-g.svg" alt=""/></div><span>Подробное описание программы</span>
+          </div>
+          <div class="circs__item">
+            <div class="circs__img"><img src="img/circs-3-g.svg" alt=""/></div><span>Первичная консультация <br>от <span class="desktop">нашего</span> специалиста</span>
+          </div>
+          <div class="circs__item">
+            <div class="circs__img"><img src="img/circs-4-g.svg" alt=""/></div><span>Закрытая база кейсов участников</span>
+          </div>
+        </div>
+        <div class="achievements">
+          <div class="achievements__item">
+            <div class="achievements__number">4 000+</div>
+            <div class="achievements__text">участников прошло программу за 10 лет</div>
+          </div>
+          <div class="achievements__item">
+            <div class="achievements__number">на 29%</div>
+            <div class="achievements__text">в среднем снижаются расходы компании</div>
+          </div>
+          <div class="achievements__item">
+            <div class="achievements__number">91,5%</div>
+            <div class="achievements__text">окупают программу уже на 26 час обучения</div>
+          </div>
+        </div>
+        <div class="achievements__info">на основе внутренней аналитики результатов и отзывов участников программы </div>
+      </div>
+      <!-- begin technology-->
+      <section class="technology section" id="technology">
+        <div class="container_center">
+          <h2 class="section__title"><b>Курс построен по технологии управления финансов, </b>которую мы внедрили в 4 000+ компаний </h2>
+          <div class="technology__content">
+            <div class="technology__left">
+              <div class="technology__label">Три ключевых результата программы:</div>
+              <ol class="technology__list">
+                <li> <b>Решите проблемы с деньгами </b>(кассовые разрывы, долги, сезонность). Наведёте порядок в финансах и избавитесь от лишних расходов.</li>
+                <li> <b>Увеличите чистую прибыль компании </b>и свой личный заработок. Снизите загруженность, получите больше свободного времени.</li>
+                <li> <b>Поднимите мотивацию за счёт «безокладной системы оплаты труда» ﻿</b>и производительность персонала.</li>
+              </ol>
+            </div>
+            <div class="technology__right">
+              <div class="plate">
+                <div class="technology__label">Из чего состоит обучение?</div>
+                <div class="technology__plates plates">
+                  <div class="plates__item">
+                    <div class="technology__img"><img src="img/tech-1.png" alt=""/></div>
+                    <div class="technology__text">43 теоретических видео-блока по построению системы финансов</div>
+                  </div>
+                  <div class="plates__item">
+                    <div class="technology__img"><img src="img/tech-2.png" alt=""/></div>
+                    <div class="technology__text">39 упражнений и заданий для выполнения в течение курса</div>
+                  </div>
+                  <div class="plates__item">
+                    <div class="technology__img"><img src="img/tech-3.png" alt=""/></div>
+                    <div class="technology__text">Инструктор, который контролирует, проверяет и помогает</div>
+                  </div>
+                  <div class="plates__item">
+                    <div class="technology__img"><img src="img/tech-4.png" alt=""/></div>
+                    <div class="technology__text">21 шаблон документов, которые вы внедрите в свой бизнес</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="technology__bottom">
+            <form class="form" action="send.php">
+              <input type="hidden" name="subject" value="Форма - получите актуальные условия участия в программе"/>
+              <div class="form__title">Заполните форму и получите актуальные условия участия в программе</div>
+              <div class="form__sub">Мы вышлем всю информацию, ﻿ответим <br>на вопросы и озвучим стоимость обучения</div>
+              <div class="form__row">
+                <input type="text" name="name" placeholder="Как вас зовут?" required="required"/>
+              </div>
+              <div class="form__row">
+                <input type="tel" name="tel" placeholder="+7" required="required"/>
+              </div>
+              <div class="form__action">
+                <button class="btn" type="submit">Получить условия участия</button>
+              </div>
+              <div class="form__term">Нажимая на кнопку, вы соглашаетесь на <a href="#">условия обработки данных</a></div>
+            </form>
+            <div class="technology__circs">
+              <div class="technology__circsTitle">Узнайте актуальные условия участия в программе<span>1 июля</span></div>
+              <div class="circs">
+                <div class="circs__item">
+                  <div class="circs__img"><img src="img/circs-1-g.svg" alt=""/></div><span>Специальные условия ﻿по стоимости</span>
+                </div>
+                <div class="circs__item">
+                  <div class="circs__img"><img src="img/circs-2-g.svg" alt=""/></div><span>Подробное описание программы</span>
+                </div>
+                <div class="circs__item">
+                  <div class="circs__img"><img src="img/circs-3-g.svg" alt=""/></div><span>Первичная консультация <br>от <span class="desktop">нашего</span> специалиста</span>
+                </div>
+                <div class="circs__item">
+                  <div class="circs__img"><img src="img/circs-4-g.svg" alt=""/></div><span>Закрытая база кейсов участников</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end technology-->
+      <!-- begin important-->
+      <section class="important section" id="important">
+        <div class="container_center">
+          <h2 class="section__title"><b>Ключевые действия, <br>﻿которые отмечают участники:</b></h2>
+          <div class="plates">
+            <div class="plates__item">
+              <div class="important__top">
+                <div class="important__photo"><img src="img/owner-1.png" alt="Махач Хайбаев"/></div>
+                <div class="important__info">
+                  <div class="important__name">Махач Хайбаев</div>
+                  <div class="important__company">«Migliori»</div>
+                </div>
+              </div>
+              <div class="important__quote">Внедрил финансовое планирование и увеличил прирост выручки на 200%.</div>
+            </div>
+            <div class="plates__item">
+              <div class="important__top">
+                <div class="important__photo"><img src="img/owner-2.png" alt="Максим Гральник"/></div>
+                <div class="important__info">
+                  <div class="important__name">Максим Гральник</div>
+                  <div class="important__company">«Гральник Лицензирование»</div>
+                </div>
+              </div>
+              <div class="important__quote">Внедрил систему безокладной мотивации персонала и снизил расходы на 23%.</div>
+            </div>
+            <div class="plates__item">
+              <div class="important__top">
+                <div class="important__photo"><img src="img/owner-3.png" alt="Роман Мысютин"/></div>
+                <div class="important__info">
+                  <div class="important__name">Роман Мысютин</div>
+                  <div class="important__company">«НИВЮС»</div>
+                </div>
+              </div>
+              <div class="important__quote">Быстро достиг точки безубыточности и увеличил прирост выручки на 22%.</div>
+            </div>
+            <div class="plates__item">
+              <div class="important__top">
+                <div class="important__photo"><img src="img/owner-4.png" alt="Настинова Елена"/></div>
+                <div class="important__info">
+                  <div class="important__name">Настинова Елена</div>
+                  <div class="important__company">«ОЙРАТ»</div>
+                </div>
+              </div>
+              <div class="important__quote">Высвободил 3-4 часа в день при увеличении выручки на 30%.</div>
+            </div>
+            <div class="plates__item">
+              <div class="important__top">
+                <div class="important__photo"><img src="img/owner-5.png" alt="Николай Моисеев"/></div>
+                <div class="important__info">
+                  <div class="important__name">Николай Моисеев</div>
+                  <div class="important__company">«ГЕОКАД»</div>
+                </div>
+              </div>
+              <div class="important__quote">Наняли 7 новых сотрудников <br>и увеличил доход на 55%.</div>
+            </div>
+            <div class="plates__item">
+              <div class="important__top">
+                <div class="important__photo"><img src="img/owner-6.png" alt="Ольга Маркина"/></div>
+                <div class="important__info">
+                  <div class="important__name">Ольга Маркина</div>
+                  <div class="important__company">«КонСтил24»</div>
+                </div>
+              </div>
+              <div class="important__quote">Увеличили штат сотрудников <br>и выросли в выручке на 90%.</div>
+            </div>
+            <div class="plates__item">
+              <div class="important__top">
+                <div class="important__photo"><img src="img/owner-7.png" alt="Молодцов Александр"/></div>
+                <div class="important__info">
+                  <div class="important__name">Молодцов Александр</div>
+                  <div class="important__company">«Строительная база №1»</div>
+                </div>
+              </div>
+              <div class="important__quote">Еженедельно стал получать <br>дивиденды,погасил долги на 70%.</div>
+            </div>
+            <div class="plates__item">
+              <div class="important__top">
+                <div class="important__photo"><img src="img/owner-8.png" alt="Фесюнов Павел"/></div>
+                <div class="important__info">
+                  <div class="important__name">Фесюнов Павел</div>
+                  <div class="important__company">«PRO-TUNING COMPANY»</div>
+                </div>
+              </div>
+              <div class="important__quote">Внедрили фонд дивидендов, <br>﻿доход прирос на 11 млн рублей.</div>
+            </div>
+            <div class="plates__item">
+              <div class="important__top">
+                <div class="important__photo"><img src="img/owner-9.png" alt="Байбеков Евгений"/></div>
+                <div class="important__info">
+                  <div class="important__name">Байбеков Евгений</div>
+                  <div class="important__company">«Умняша»</div>
+                </div>
+              </div>
+              <div class="important__quote">Оптимизировал расходы <br>и увеличил доход на 50%.</div>
+            </div>
+          </div>
+          <div class="section__more">
+            <button class="btn btn_more mobile js_moreImportant">Загрузить ещё</button>
+            <button class="btn" data-toggle="modal" data-target="#getInfo">Узнать стоимость и подробности о курсе</button>
+          </div>
+        </div>
+      </section>
+      <!-- end important-->
+      <!-- begin programm-->
+      <section class="programm section" id="programm">
+        <div class="container_center">
+          <h2 class="section__title"><b>Программа обучения:</b></h2>
+          <div class="programm__list">
+            <div class="programm__row">
+              <div class="programm__toggle"><img src="img/gear.svg" alt=""/></div>
+              <div class="programm__content">
+                <div class="programm__top">
+                  <div class="programm__name">Технология обучения</div>
+                  <div class="programm__duration">5 часов</div>
+                  <div class="programm__info"><span>13 видео-лекций </span><span>8 упражнений </span><span>3 статьи </span></div>
+                </div>
+              </div>
+            </div>
+            <div class="programm__row">
+              <div class="programm__toggle"><img src="img/rub.svg" alt=""/></div>
+              <div class="programm__content">
+                <div class="programm__top">
+                  <div class="programm__name">Основы финансового планирования</div>
+                  <div class="programm__duration">15 часов</div>
+                  <div class="programm__info"><span>12 видео-лекций </span><span>8 упражнений </span><span>3 статьи </span></div>
+                </div>
+                <ol class="programm__steps">
+                  <li>Шаблоны заявок.</li>
+                  <li>Таблицы для создания своей формы распределения средств и расчета ТБ.</li>
+                  <li>Схема потока проведения процедуры финансового.</li>
+                  <li>Схема системы расчётных счетов.</li>
+                </ol>
+              </div>
+            </div>
+            <div class="programm__row">
+              <div class="programm__toggle"><img src="img/pie.svg" alt=""/></div>
+              <div class="programm__content">
+                <div class="programm__top">
+                  <div class="programm__name">Управление доходом</div>
+                  <div class="programm__duration">10 часов</div>
+                  <div class="programm__info"><span>5 видео-лекций </span><span>9 упражнений </span><span>6 статей </span></div>
+                </div>
+                <ol class="programm__steps">
+                  <li>Схема шагов по работе с дебиторской.</li>
+                  <li>Список действий для проведения.</li>
+                  <li>Список правил «секрет платёжеспособности».</li>
+                  <li>План по доходу компании для достижения ТБ.</li>
+                  <li>Шаблон пример организующей схемы компании.</li>
+                  <li>Инструкция по работе с долгами.</li>
+                </ol>
+              </div>
+            </div>
+            <div class="programm__row">
+              <div class="programm__toggle"><img src="img/list.svg" alt=""/></div>
+              <div class="programm__content">
+                <div class="programm__top">
+                  <div class="programm__name">Ценообразование и управление</div>
+                  <div class="programm__duration">5 часов</div>
+                  <div class="programm__info"><span>5 видео-лекций </span><span>4 упражнений </span><span>3 статьи </span></div>
+                </div>
+                <ol class="programm__steps">
+                  <li>Инструменты мерчандайзинга и ABC анализа.</li>
+                  <li>Список шагов по увеличению маржинальности.</li>
+                  <li>Список рекомендаций для работы с ассортиментом.</li>
+                  <li>Чек-лист функций финансового директора.</li>
+                  <li>Инструкция по скидкам.</li>
+                  <li>Классификатор товаров.</li>
+                </ol>
+              </div>
+            </div>
+            <div class="programm__row">
+              <div class="programm__toggle"><img src="img/man.svg" alt=""/></div>
+              <div class="programm__content">
+                <div class="programm__top">
+                  <div class="programm__name">Система заработной платы и мотивации персонала</div>
+                  <div class="programm__duration">10 часов</div>
+                  <div class="programm__info"><span>5 видео-лекций </span><span>4 упражнений </span><span>6 статей </span></div>
+                </div>
+                <ol class="programm__steps">
+                  <li>Инструкция по статистикам по каждому отделению (30 шт).</li>
+                  <li>Таблица расчёта заработной платы по баллам.</li>
+                  <li>19 правил в отношении финансов в компании.</li>
+                  <li>Инструкция по найму персонала.</li>
+                </ol>
+              </div>
+            </div>
+            <div class="programm__row">
+              <div class="programm__toggle"><img src="img/flag.svg" alt=""/></div>
+              <div class="programm__content">
+                <div class="programm__top">
+                  <div class="programm__name">Тренировки и завершение</div>
+                  <div class="programm__duration">5 часов</div>
+                  <div class="programm__info"><span>1 видео-лекция </span><span>2 упражнения </span><span>1 статья </span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end programm-->
+      <!-- begin actual-->
+      <section class="actual section" id="actual">
+        <div class="container_center">
+          <div class="actual__content">
+            <h2 class="section__title">Узнайте актуальные условия участия в программе</h2>
+            <div class="actual__action">
+              <button class="btn" data-toggle="modal" data-target="#getInfo">Узнать условия участия в программе</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end actual-->
+      <!-- begin reality-->
+      <section class="reality section" id="reality">
+        <div class="reality__top">
+          <div class="reality__title">
+            <h2 class="section__title"><b>Всё обучение — <br>на реальных цифрах вашего бизнеса</b></h2>
+            <h3 class="section__sub">Обязательное условие перед стартом — подготовить ряд отчетов и показателей, с которыми вы будете работать.</h3>
+          </div>
+          <div class="reality__left"><img src="img/chart-1.png" alt=""/></div>
+          <div class="reality__right"><img src="img/chart-2.png" alt=""/></div>
+        </div>
+        <div class="container_center">
+          <div class="reality__bottom">
+            <div class="reality__descr">За время курса вы создадите 4 таблицы <img class="mobile" src="img/xls.svg" alt=""/>, 3 регламента, которые будут работать на вас всю жизнь</div>
+            <div class="reality__label">вот лишь малая часть из них:</div>
+            <ul class="reality__list">
+              <li><img src="img/xls.svg" alt=""/><span>Таблица для создания формы распределения средств</span></li>
+              <li><img src="img/xls.svg" alt=""/><span>План финансового <br>совета компании</span></li>
+              <li><img src="img/xls.svg" alt=""/><span>Таблица по начислению <br>безокладной зарплаты</span></li>
+              <li><img src="img/xls.svg" alt=""/><span>Таблица для создания <br>системы фондов</span></li>
+              <li><img src="img/xls.svg" alt=""/><span>Таблица плана <br>по доходу</span></li>
+              <li><img src="img/xls.svg" alt=""/><span>Регламент по статистикам <br>для компании</span></li>
+              <li><img src="img/xls.svg" alt=""/><span>Схема системы <br>расчётных счетов</span></li>
+              <li><img src="img/xls.svg" alt=""/><span>Работа с дебиторской <br>задолженностью</span></li>
+              <li><img src="img/xls.svg" alt=""/><span>Регламент по скидкам</span></li>
+              <li><img src="img/xls.svg" alt=""/><span>Система заявок <br>на расходы</span></li>
+              <li><img src="img/xls.svg" alt=""/><span>Регламент по работе <br>с долгами</span></li>
+              <li><img src="img/xls.svg" alt=""/><span>Описание вакансии</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- end reality-->
+      <!-- begin author-->
+      <section class="author section" id="author">
+        <div class="container_center">
+          <div class="author__content">
+            <div class="author__photo"><img src="img/Irina.png" alt="Ирина Нарчемашвили"/></div>
+            <div class="author__right">
+              <div class="author__label">автор курса</div>
+              <h2 class="section__title">Ирина Нарчемашвили</h2>
+              <div class="author__descr">
+                <p>Один из лучших специалистов по финансам <br>в России, 17 лет своего бизнеса.</p>
+                <p>Действующий финансовый директор АТМ GROUP.</p>
+                <p>Тренер и консультант с 15 летним опытом.</p>
+                <p>Обучила 40 000 предпринимателей — рост <br>дохода от 40% до 300%.</p>
+              </div>
+              <div class="author__tags"><span>Автор программы — «ProfitJey» </span><span>Соавтор ERP системы — «ManaJet» </span><span>Диплом международного уровня </span></div>
+            </div>
+          </div>
+          <div class="author__bottom">
+            <div class="author__circs">
+              <div class="author__legend">Готовы узнать стоимость <br>и специальные условия участия?</div>
+              <div class="circs">
+                <div class="circs__item">
+                  <div class="circs__img"><img src="img/circs-1-g.svg" alt=""/></div><span>Специальные условия ﻿по стоимости</span>
+                </div>
+                <div class="circs__item">
+                  <div class="circs__img"><img src="img/circs-2-g.svg" alt=""/></div><span>Подробное описание программы</span>
+                </div>
+                <div class="circs__item">
+                  <div class="circs__img"><img src="img/circs-3-g.svg" alt=""/></div><span>Первичная консультация <br>от <span class="desktop">нашего</span> специалиста</span>
+                </div>
+                <div class="circs__item">
+                  <div class="circs__img"><img src="img/circs-4-g.svg" alt=""/></div><span>Закрытая база кейсов участников</span>
+                </div>
+              </div>
+            </div>
+            <div class="author__form">
+              <form class="form" action="send.php">
+                <input type="hidden" name="subject" value="Форма - получите актуальные условия участия в программе"/>
+                <div class="form__title">Заполните форму и получите актуальные условия участия в программе</div>
+                <div class="form__sub">Мы вышлем всю информацию, ﻿ответим <br>на вопросы и озвучим стоимость обучения</div>
+                <div class="form__row">
+                  <input type="text" name="name" placeholder="Как вас зовут?" required="required"/>
+                </div>
+                <div class="form__row">
+                  <input type="tel" name="tel" placeholder="+7" required="required"/>
+                </div>
+                <div class="form__action">
+                  <button class="btn" type="submit">Получить условия участия</button>
+                </div>
+                <div class="form__term">Нажимая на кнопку, вы соглашаетесь на <a href="#">условия обработки данных</a></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end author-->
+      <!-- begin problem-->
+      <section class="problem section" id="problem">
+        <div class="container_center">
+          <h2 class="section__title"><b>Проблемы в бизнесе, которые решают участники во время обучения</b></h2>
+          <div class="problem__list">
+            <div class="problem__row">
+              <div class="problem__owner">
+                <div class="problem__photo"><img src="img/problem-1.png" alt=""/></div>
+                <div class="problem__descr">
+                  <div class="problem__name">Козлова Анна,</div>
+                  <div class="problem__company">«ПЕЧЬ&amp;ЛАНЧ»</div>
+                </div>
+              </div>
+              <div class="problem__content">
+                <div class="problem__item">
+                  <div class="problem__label">до</div>
+                  <div class="problem__text">Сотрудники не были заинтересованы в росте компании, большая конкуренция, долги перед банком и поставщиками.</div>
+                </div>
+                <div class="problem__item">
+                  <div class="problem__label problem__label_to">после</div>
+                  <div class="problem__text">Персонал предлагает идеи по увеличению дохода, прирост дохода на 30%, кредитная нагрузка упала на 30%.</div>
+                </div>
+              </div>
+            </div>
+            <div class="problem__row">
+              <div class="problem__owner">
+                <div class="problem__photo"><img src="img/problem-2.png" alt=""/></div>
+                <div class="problem__descr">
+                  <div class="problem__name">Лариса Дубровина,</div>
+                  <div class="problem__company">«Golden Taurus»</div>
+                </div>
+              </div>
+              <div class="problem__content">
+                <div class="problem__item">
+                  <div class="problem__label">до</div>
+                  <div class="problem__text">Зарплата персонала окладная. <br>Нет финансового планирования компании. Лишние траты.</div>
+                </div>
+                <div class="problem__item">
+                  <div class="problem__label problem__label_to">после</div>
+                  <div class="problem__text">Полностью перешли на безокладную <br>оплату труда. Внедрили систему ФП. Оптимизировали расходы.</div>
+                </div>
+              </div>
+            </div>
+            <div class="problem__row">
+              <div class="problem__owner">
+                <div class="problem__photo"><img src="img/problem-3.png" alt=""/></div>
+                <div class="problem__descr">
+                  <div class="problem__name">Николай Титков,</div>
+                  <div class="problem__company">«ГК ПРОФЭЛЕКТРО»</div>
+                </div>
+              </div>
+              <div class="problem__content">
+                <div class="problem__item">
+                  <div class="problem__label">до</div>
+                  <div class="problem__text">Делали много, а результата нет. <br>Большие расходы. Бизнес-процессы <br>без моего участия не решались.</div>
+                </div>
+                <div class="problem__item">
+                  <div class="problem__label problem__label_to">после</div>
+                  <div class="problem__text">Безокладная зарплата. Прирост маржи на 42%. Появился совет руководителей, который <br>снял с меня нагрузку.</div>
+                </div>
+              </div>
+            </div>
+            <div class="problem__row">
+              <div class="problem__owner">
+                <div class="problem__photo"><img src="img/problem-4.png" alt=""/></div>
+                <div class="problem__descr">
+                  <div class="problem__name">Михаил Гребенюк,</div>
+                  <div class="problem__company">«Grebenyuk Resulting»</div>
+                </div>
+              </div>
+              <div class="problem__content">
+                <div class="problem__item">
+                  <div class="problem__label">до</div>
+                  <div class="problem__text">Выполнял функции сотрудников, а не учредителя. Решения от тратах принимались интуитивно. <br>У команды было слабое представление <br>о расходах компании.</div>
+                </div>
+                <div class="problem__item">
+                  <div class="problem__label problem__label_to">после</div>
+                  <div class="problem__text">Появился совет руководителей, освободил время. Прирост дохода составил 200%. Безокладная мотивация сотрудников. <br>Сократили долги на 33%.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="problem__info"><span>Листай вправо, чтобы посмотреть проблемы участников программы </span><img src="img/slide.svg" alt=""/></div>
+          <div class="problemVideo">
+            <div class="problemVideo__row">
+              <div class="problemVideo__descr">
+                <div class="problemVideo__name">Максим Гральник</div>
+                <div class="problemVideo__text">
+                  <p>Настроил систему финансов. Научился <br>влиять на доход и мотивировать персонал.</p>
+                  <p>Уверен, что курс окупится за неделю, <br>если применить хотя бы 10%.</p>
+                </div>
+                <div class="problemVideo__photo"><img src="img/pvideo-1.png" alt="Максим Гральник"/></div>
+              </div>
+              <div class="problemVideo__wrap">
+                <div class="video__wrapper js-youtube" id="spvVHqg_9kI"></div>
+              </div>
+            </div>
+            <div class="problemVideo__row">
+              <div class="problemVideo__descr">
+                <div class="problemVideo__name">Олег Торбосов</div>
+                <div class="problemVideo__text">
+                  <p>Настроил систему финансов. Научился <br>влиять на доход и мотивировать персонал.</p>
+                  <p>Уверен, что курс окупится за неделю, <br>если применить хотя бы 10%.</p>
+                </div>
+                <div class="problemVideo__photo"><img src="img/pvideo-2.png" alt="Олег Торбосов"/></div>
+              </div>
+              <div class="problemVideo__wrap">
+                <div class="video__wrapper js-youtube" id="LMI0pkp35Bc"></div>
+              </div>
+            </div>
+            <div class="problemVideo__row">
+              <div class="problemVideo__descr">
+                <div class="problemVideo__name">Алексей Катков</div>
+                <div class="problemVideo__text">
+                  <p>Настроил систему финансов. Научился <br>влиять на доход и мотивировать персонал.</p>
+                  <p>Уверен, что курс окупится за неделю, <br>если применить хотя бы 10%.</p>
+                </div>
+                <div class="problemVideo__photo"><img src="img/pvideo-3.png" alt="Алексей Катков"/></div>
+              </div>
+              <div class="problemVideo__wrap">
+                <div class="video__wrapper js-youtube" id="OuOXvavAy1c"></div>
+              </div>
+            </div>
+            <div class="problemVideo__row">
+              <div class="problemVideo__descr">
+                <div class="problemVideo__name">Дмитрий Портнягин</div>
+                <div class="problemVideo__text">
+                  <p>Настроил систему финансов. Научился <br>влиять на доход и мотивировать персонал.</p>
+                  <p>Уверен, что курс окупится за неделю, <br>если применить хотя бы 10%.</p>
+                </div>
+                <div class="problemVideo__photo"><img src="img/pvideo-4.png" alt="Дмитрий Портнягин"/></div>
+              </div>
+              <div class="problemVideo__wrap">
+                <div class="video__wrapper js-youtube" id="d2NyWVenQ24"></div>
+              </div>
+            </div>
+          </div>
+          <div class="section__more"><a class="btn btn_more mobile js_moreVideo" href="#">Загрузить ещё</a>
+            <button class="btn" data-toggle="modal" data-target="#getInfo">Узнать стоимость и подробности о курсе</button>
+          </div>
+        </div>
+      </section>
+      <!-- end problem-->
+      <!-- begin unick-->
+      <section class="unick section" id="unick">
+        <div class="container_center">
+          <h2 class="section__title"><b>Вы проходите обучение в режиме онлайн <br>на нашей уникальной IT-платформе</b></h2>
+          <div class="unick__sub">Посмотрите видео как проходит обучение</div>
+          <div class="unick__video">
+            <div class="video__wrapper video__wrapper_nobtn js-youtube" id="Y4oKQ4haM3M">
+              <div class="video__play"><img src="img/play.svg" alt=""/><span>Посмотрите видео как проходит обучение</span></div>
+            </div>
+          </div>
+          <div class="unick__info">
+            <div class="unick__infoText">Всё время обучения вы находитесь на связи с инструктором: он вам помогает с практическими заданиями и отвечает <br>на любые вопросы.</div>
+            <div class="unick__infoTeachs"><img src="img/unick-1.png" alt=""/><img src="img/unick-2.png" alt=""/><img src="img/unick-3.png" alt=""/></div>
+          </div>
+          <div class="unick__list plates">
+            <div class="plates__item">
+              <div class="unick__title">Расписание</div>У вас будет индивидуальный <br>график обучения. Кто-то готов <br>пройти  программу за 5 дней, <br>а кто-то вдумчиво изучает <br>в течение 4-х недель.
+            </div>
+            <div class="plates__item">
+              <div class="unick__title">Личная работа</div>Инструктор будет подсказывать <br>вам на каждом шаге, чтобы вы прошли курс на 100%, сделали все задания <br>и применили знания.
+            </div>
+            <div class="plates__item">
+              <div class="unick__title">Точно получится</div>Доходимость на курсе —  <span>97% </span><br/>Каждый из участников успешно разрабатывает грамотную систему финансов под свой бизнес и уходит <br>с четким планом по внедрению.
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end unick-->
+      <!-- begin networking-->
+      <section class="networking section" id="networking">
+        <div class="container_center">
+          <div class="networking__content">
+            <div class="networking__left">
+              <h2 class="section__title"><b>Качественный нетворкинг среди выпускников программы <span class="desktop">и участие <br>в закрытых мероприятиях</span></b></h2>
+              <div class="networking__sub">и участие в закрытых мероприятиях</div>
+              <div class="networking__list">
+                <div class="networking__listItem">
+                  <div class="networking__listImg"><img src="img/networking-1.png" alt=""/></div>
+                  <div class="networking__listText">Общий чат выпускников в Telegram</div>
+                </div>
+                <div class="networking__listItem">
+                  <div class="networking__listImg"><img src="img/networking-2.png" alt=""/></div>
+                  <div class="networking__listText">Закрытые вебинары для выпускников</div>
+                </div>
+                <div class="networking__listItem">
+                  <div class="networking__listImg"><img src="img/networking-3.png" alt=""/></div>
+                  <div class="networking__listText">Живые встречи клуба выпускников каждые 2 месяца</div>
+                </div>
+              </div>
+            </div>
+            <div class="networking__right"><img src="img/networking-phone.png" alt=""/></div>
+          </div>
+          <div class="networking__plates plates">
+            <div class="plates__item">
+              <div class="networking__name">Узнайте актуальную <br>стоимость участия в программе</div>
+              <div class="networking__text">Мы вышлем презентацию о программе, <br>проконсультируем и расскажем об актуальной цене.</div>
+              <div class="networking__action">
+                <button class="btn btn_seccondary" data-toggle="modal" data-target="#getInfo">Узнать стоимость участия</button>
+              </div>
+            </div>
+            <div class="plates__item">
+              <div class="networking__name">Приходите на наши <br>бесплатные вебинары</div>
+              <div class="networking__text">Каждую неделю мы проводим бесплатные <br>вебинары на тему финансов в бизнесе.</div>
+              <div class="networking__action">
+                <button class="btn btn_primary" data-toggle="modal" data-target="#getClosed">Подписаться на увомления о вебинарах</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end networking-->
+      <!-- Begin Modal call-->
+      <div class="modal fade call" id="call">
+        <div class="modal-dialog"><a class="modal-close" href="#" data-dismiss="modal"></a>
+          <form class="form" action="send.php">
+            <input type="hidden" name="subject" value="Форма - Обратный звонок"/>
+            <div class="form__title">Закажите звонок</div>
+            <div class="form__sub">И наш менеджер свяжется с вами через 10 минут</div>
+            <div class="form__row">
+              <input type="text" name="name" placeholder="Как вас зовут?" required="required"/>
+            </div>
+            <div class="form__row">
+              <input type="tel" name="tel" placeholder="+7" required="required"/>
+            </div>
+            <div class="form__action">
+              <button class="btn" type="submit">Заказать звонок</button>
+            </div>
+            <div class="form__term">Нажимая на кнопку, вы соглашаетесь на <a href="#">условия обработки данных</a></div>
+          </form>
         </div>
       </div>
+      <!-- End modal call-->
+      <!-- Begin Modal getInfo-->
+      <div class="modal fade getInfo" id="getInfo">
+        <div class="modal-dialog"><a class="modal-close" href="#" data-dismiss="modal"></a>
+          <div class="author__bottom">
+            <div class="author__circs">
+              <div class="author__legend">Узнайте актуальные условия участия в программе <span>1 июля</span></div>
+              <div class="circs">
+                <div class="circs__item">
+                  <div class="circs__img"><img src="img/circs-1-g.svg" alt=""/></div><span>Специальные условия ﻿по стоимости</span>
+                </div>
+                <div class="circs__item">
+                  <div class="circs__img"><img src="img/circs-2-g.svg" alt=""/></div><span>Подробное описание программы</span>
+                </div>
+                <div class="circs__item">
+                  <div class="circs__img"><img src="img/circs-3-g.svg" alt=""/></div><span>Первичная консультация <br>от <span class="desktop">нашего</span> специалиста</span>
+                </div>
+                <div class="circs__item">
+                  <div class="circs__img"><img src="img/circs-4-g.svg" alt=""/></div><span>Закрытая база кейсов участников</span>
+                </div>
+              </div>
+            </div>
+            <div class="author__form">
+              <form class="form" action="send.php">
+                <input type="hidden" name="subject" value="Форма - Получите актуальные условия"/>
+                <div class="form__title">Заполните форму и получите актуальные условия участия в программе</div>
+                <div class="form__sub">Мы вышлем всю информацию, ﻿ответим <br>на вопросы и озвучим стоимость обучения</div>
+                <div class="form__row">
+                  <input type="text" name="name" placeholder="Как вас зовут?" required="required"/>
+                </div>
+                <div class="form__row">
+                  <input type="tel" name="tel" placeholder="+7" required="required"/>
+                </div>
+                <div class="form__action">
+                  <button class="btn" type="submit">Получить условия участия</button>
+                </div>
+                <div class="form__term">Нажимая на кнопку, вы соглашаетесь на <a href="#">условия обработки данных</a></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End modal getInfo-->
+      <!-- Begin Modal getClosed-->
+      <div class="modal fade getClosed" id="getClosed">
+        <div class="modal-dialog"><a class="modal-close" href="#" data-dismiss="modal"></a>
+          <form class="form" action="send.php">
+            <input type="hidden" name="subject" value="Форма - Доступ к закрытым вебинарам"/>
+            <div class="form__title">Получите доступ к закрытым вебинарам по финансам</div>
+            <div class="form__sub">Каждую неделю мы проводим бесплатные вебинары на тему финансов в бизнесе.</div>
+            <div class="form__row">
+              <input type="text" name="name" placeholder="Как вас зовут?" required="required"/>
+            </div>
+            <div class="form__row">
+              <input type="email" name="email" placeholder="Введите ваш e-mail" required="required"/>
+            </div>
+            <div class="form__action">
+              <button class="btn btn_primary" type="submit">Подписаться на уведомления <br>о вебинарах</button>
+            </div>
+            <div class="form__term">Нажимая на кнопку, вы соглашаетесь на <a href="#">условия обработки данных</a></div>
+          </form>
+        </div>
+      </div>
+      <!-- End modal getClosed-->
     </main>
     <footer class="footer">
-      <div class="container_center">
-        <p></p>&copy; 2016 |<i class="fa fa-github" aria-hidden="true">&nbsp;</i><a href="#">View Source</a>
+      <div class="footer__content">
+        <div class="footer__logo"><a class="logo" href="/"><img src="img/logo.svg" alt="ATM logo"/></a></div>
+        <div class="footer__inn">
+          <div>ОГРН 1234567890 </div>
+          <div>ИНН 1234567890</div>
+        </div>
+        <div class="footer__links"><a href="#">Политика конфиденциальности</a><a href="#">Договор оферты</a></div>
+        <div class="footer__dev">
+          <div class="footer__label">Разработка сайта</div><a href="#"><img src="img/ttf.svg" alt="Время первых"/></a>
+        </div>
       </div>
     </footer>
     <script src="js/jquery.js"></script>
-    <script src="js/function.js?0.1"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/function.js?0.7"></script>
   </body>
 </html>
